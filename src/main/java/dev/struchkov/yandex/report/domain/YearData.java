@@ -52,4 +52,5 @@ public class YearData {
                 ", expense=" + expense +
                 '}';
     }
+
 }

@@ -35,7 +35,7 @@ public class Main {
         final ReportReadService<YearData> yearReportReadService = new ReportReadYearCsvServiceImpl(fileReader);
         final ReportReadService<MonthData> monthReportReadService = new ReportReadMonthCsvServiceImpl(fileReader);
 
-        final String path = "";
+        final String path = "/Users/upagge/IdeaProjects/yandex/sprint-one/src/main/resources";
         final MontScheduler montScheduler = new MontScheduler(
                 path,
                 "regex:.+m.\\d{6}.csv",

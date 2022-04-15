@@ -51,15 +51,15 @@ public class ConsoleApp {
                     montScheduler.run();
                     break;
                 case 2:
-                    final Timer timer = new Timer();
-                    timer.schedule(
+                    final Timer yearTimer = new Timer();
+                    yearTimer.schedule(
                             new TimerTask() {
                                 @Override
                                 public void run() {
                                     yearScheduler.run();
                                 }
                             },
-                            0, 60_000
+                            0, 10_000
                     );
 
                     final Timer monthTimer = new Timer();
@@ -73,7 +73,6 @@ public class ConsoleApp {
                             0, 60_000
                     );
                     break;
-
                 case 3:
                     final List<MonthReport> monthReports = monthService.generateAllMonthReport();
                     presentation.showMonthReport(monthReports);
@@ -86,6 +85,8 @@ public class ConsoleApp {
                     final String year = presentation.userInput("Введите год: ");
                     final Set<Month> months = accountant.dataReconciliation(Integer.parseInt(year));
                     presentation.showResultDataReconciliation(months);
+                    break;
+                default:
                     break;
             }
         } while (command != 0);

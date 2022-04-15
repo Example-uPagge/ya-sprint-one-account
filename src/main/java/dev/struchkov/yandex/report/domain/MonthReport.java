@@ -3,7 +3,6 @@ package dev.struchkov.yandex.report.domain;
 import java.math.BigDecimal;
 import java.time.Month;
 import java.time.Year;
-import java.util.List;
 
 public class MonthReport implements Comparable<MonthReport> {
 
@@ -61,6 +60,7 @@ public class MonthReport implements Comparable<MonthReport> {
         public int compareTo(Pair o) {
             return sum.compareTo(o.sum);
         }
+
     }
 
     @Override

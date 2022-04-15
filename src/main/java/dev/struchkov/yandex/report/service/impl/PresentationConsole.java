@@ -19,6 +19,7 @@ public class PresentationConsole implements Presentation {
             "3. Вывести месячные отчеты\n" +
             "4. Вывести годовые отчеты\n" +
             "5. Сверка отчета\n" +
+            "0. Выход\n" +
             "-- -- -- -- --";
 
     @Override
@@ -48,7 +49,7 @@ public class PresentationConsole implements Presentation {
     public void showResultDataReconciliation(Set<Month> months) {
         if (months.isEmpty()) {
             System.out.println("-- -- -- -- --");
-            System.out.println("Оператция успешно завершена!");
+            System.out.println("Оператция успешно завершена. Ошибок не обнаружено!");
             System.out.println("-- -- -- -- --");
         } else {
             System.out.println("-- -- -- -- --");

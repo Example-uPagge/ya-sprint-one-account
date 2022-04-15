@@ -11,7 +11,7 @@ public class FileReaderImpl implements FileReader {
 
     public Optional<String> read(Path path) {
         try {
-            return Optional.of(Files.readString(path));
+            return Optional.ofNullable(Files.readString(path));
         } catch (IOException e) {
             System.out.println("Невозможно прочитать файл с месячным отчётом. Возможно, файл не находится в нужной директории.");
             return Optional.empty();
