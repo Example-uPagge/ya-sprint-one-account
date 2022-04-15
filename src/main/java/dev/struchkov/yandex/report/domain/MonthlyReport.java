@@ -4,14 +4,14 @@ import java.math.BigDecimal;
 import java.time.Month;
 import java.time.Year;
 
-public class MonthReport implements Comparable<MonthReport> {
+public class MonthlyReport implements Comparable<MonthlyReport> {
 
     private final Year year;
     private final Month month;
     private final Pair productProfit;
     private final Pair bigWaste;
 
-    public MonthReport(Year year, Month month, Pair productProfit, Pair bigWaste) {
+    public MonthlyReport(Year year, Month month, Pair productProfit, Pair bigWaste) {
         this.year = year;
         this.month = month;
         this.productProfit = productProfit;
@@ -27,7 +27,7 @@ public class MonthReport implements Comparable<MonthReport> {
     }
 
     @Override
-    public int compareTo(MonthReport o) {
+    public int compareTo(MonthlyReport o) {
         final int yearCompare = this.getYear().compareTo(o.getYear());
         final int monthCompare = this.getMonth().compareTo(o.getMonth());
         if (yearCompare < 0) {

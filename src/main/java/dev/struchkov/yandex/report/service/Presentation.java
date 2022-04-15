@@ -1,7 +1,7 @@
 package dev.struchkov.yandex.report.service;
 
-import dev.struchkov.yandex.report.domain.MonthReport;
-import dev.struchkov.yandex.report.domain.YearReport;
+import dev.struchkov.yandex.report.domain.MonthlyReport;
+import dev.struchkov.yandex.report.domain.YearlyReport;
 
 import java.time.Month;
 import java.util.List;
@@ -13,9 +13,9 @@ public interface Presentation {
 
     String userInput(String text);
 
-    void showMonthReport(List<MonthReport> monthReports);
+    void showMonthReport(List<MonthlyReport> monthlyReports);
 
-    void showYearReport(List<YearReport> yearReports);
+    void showYearReport(List<YearlyReport> yearlyReports);
 
     void showResultDataReconciliation(Set<Month> months);
 

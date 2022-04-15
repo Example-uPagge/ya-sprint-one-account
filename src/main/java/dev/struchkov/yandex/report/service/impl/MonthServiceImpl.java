@@ -1,7 +1,7 @@
 package dev.struchkov.yandex.report.service.impl;
 
 import dev.struchkov.yandex.report.domain.MonthData;
-import dev.struchkov.yandex.report.domain.MonthReport;
+import dev.struchkov.yandex.report.domain.MonthlyReport;
 import dev.struchkov.yandex.report.repository.MonthRepository;
 import dev.struchkov.yandex.report.service.MonthService;
 
@@ -37,31 +37,31 @@ public class MonthServiceImpl implements MonthService {
     }
 
     @Override
-    public Optional<MonthReport> generateMonthReport(Year year, Month month) {
+    public Optional<MonthlyReport> generateMonthReport(Year year, Month month) {
         final List<MonthData> monthDataList = repository.findAllByYearAndMonth(year, month);
         if (!monthDataList.isEmpty()) {
-            final MonthReport.Pair productProfit = getProductProfit(monthDataList, false);
-            final MonthReport.Pair maximumSpend = getProductProfit(monthDataList, true);
-            return Optional.of(new MonthReport(year, month, productProfit, maximumSpend));
+            final MonthlyReport.Pair productProfit = getProductProfit(monthDataList, false);
+            final MonthlyReport.Pair maximumSpend = getProductProfit(monthDataList, true);
+            return Optional.of(new MonthlyReport(year, month, productProfit, maximumSpend));
         }
         return Optional.empty();
     }
 
     @Override
-    public List<MonthReport> generateAllMonthReport() {
+    public List<MonthlyReport> generateAllMonthReport() {
         final Map<Year, Set<Month>> allYear = repository.findAllYear();
-        final List<MonthReport> monthReports = new ArrayList<>();
+        final List<MonthlyReport> monthlyReports = new ArrayList<>();
         for (Map.Entry<Year, Set<Month>> entry : allYear.entrySet()) {
             final Year year = entry.getKey();
             final Set<Month> months = entry.getValue();
-            final List<MonthReport> reports = months.stream()
+            final List<MonthlyReport> reports = months.stream()
                     .map(month -> generateMonthReport(year, month))
                     .filter(Optional::isPresent)
                     .map(Optional::get)
                     .collect(Collectors.toList());
-            monthReports.addAll(reports);
+            monthlyReports.addAll(reports);
         }
-        return monthReports.stream()
+        return monthlyReports.stream()
                 .sorted()
                 .collect(Collectors.toList());
     }
@@ -76,14 +76,14 @@ public class MonthServiceImpl implements MonthService {
         repository.clear(year, month);
     }
 
-    private MonthReport.Pair getProductProfit(List<MonthData> monthDataList, boolean expense) {
+    private MonthlyReport.Pair getProductProfit(List<MonthData> monthDataList, boolean expense) {
         return monthDataList.stream()
                 .filter(monthData -> monthData.isExpense() == expense)
-                .map(monthData -> new MonthReport.Pair(
+                .map(monthData -> new MonthlyReport.Pair(
                         monthData.getItemName(),
                         monthData.getSum().multiply(new BigDecimal(monthData.getQuantity()))
                 ))
-                .max(MonthReport.Pair::compareTo)
+                .max(MonthlyReport.Pair::compareTo)
                 .get();
     }
 

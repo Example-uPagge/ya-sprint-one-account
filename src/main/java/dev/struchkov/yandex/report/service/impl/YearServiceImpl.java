@@ -1,7 +1,7 @@
 package dev.struchkov.yandex.report.service.impl;
 
 import dev.struchkov.yandex.report.domain.YearData;
-import dev.struchkov.yandex.report.domain.YearReport;
+import dev.struchkov.yandex.report.domain.YearlyReport;
 import dev.struchkov.yandex.report.repository.YearRepository;
 import dev.struchkov.yandex.report.service.YearService;
 
@@ -42,7 +42,7 @@ public class YearServiceImpl implements YearService {
     }
 
     @Override
-    public YearReport generateYearReport(Year year) {
+    public YearlyReport generateYearReport(Year year) {
         final List<YearData> years = repository.findByYear(year);
         final BigDecimal spending = calculateAvg(years, true);
         final BigDecimal income = calculateAvg(years, false);
@@ -62,11 +62,11 @@ public class YearServiceImpl implements YearService {
                 ).collect(Collectors.toMap(
                         Pair::getMonth, Pair::getProfit
                 ));
-        return new YearReport(year, profit, income, spending);
+        return new YearlyReport(year, profit, income, spending);
     }
 
     @Override
-    public List<YearReport> generateAllYearReport() {
+    public List<YearlyReport> generateAllYearReport() {
         final Set<Year> years = repository.findAllYear();
         return years.stream()
                 .map(this::generateYearReport)

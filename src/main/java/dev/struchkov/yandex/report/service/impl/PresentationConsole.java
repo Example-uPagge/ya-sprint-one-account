@@ -1,7 +1,7 @@
 package dev.struchkov.yandex.report.service.impl;
 
-import dev.struchkov.yandex.report.domain.MonthReport;
-import dev.struchkov.yandex.report.domain.YearReport;
+import dev.struchkov.yandex.report.domain.MonthlyReport;
+import dev.struchkov.yandex.report.domain.YearlyReport;
 import dev.struchkov.yandex.report.service.Presentation;
 
 import java.time.Month;
@@ -34,15 +34,15 @@ public class PresentationConsole implements Presentation {
     }
 
     @Override
-    public void showMonthReport(List<MonthReport> monthReports) {
+    public void showMonthReport(List<MonthlyReport> monthlyReports) {
         System.out.println("\nВсе месячные отчеты\n-- -- -- -- --");
-        monthReports.forEach(System.out::println);
+        monthlyReports.forEach(System.out::println);
     }
 
     @Override
-    public void showYearReport(List<YearReport> yearReports) {
+    public void showYearReport(List<YearlyReport> yearlyReports) {
         System.out.println("\nВсе годовые отчеты\n-- -- -- -- --");
-        yearReports.forEach(System.out::println);
+        yearlyReports.forEach(System.out::println);
     }
 
     @Override

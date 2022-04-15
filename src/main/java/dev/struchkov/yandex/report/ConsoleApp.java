@@ -1,7 +1,7 @@
 package dev.struchkov.yandex.report;
 
-import dev.struchkov.yandex.report.domain.MonthReport;
-import dev.struchkov.yandex.report.domain.YearReport;
+import dev.struchkov.yandex.report.domain.MonthlyReport;
+import dev.struchkov.yandex.report.domain.YearlyReport;
 import dev.struchkov.yandex.report.scheduler.MontScheduler;
 import dev.struchkov.yandex.report.scheduler.YearScheduler;
 import dev.struchkov.yandex.report.service.Accountant;
@@ -74,12 +74,12 @@ public class ConsoleApp {
                     );
                     break;
                 case 3:
-                    final List<MonthReport> monthReports = monthService.generateAllMonthReport();
-                    presentation.showMonthReport(monthReports);
+                    final List<MonthlyReport> monthlyReports = monthService.generateAllMonthReport();
+                    presentation.showMonthReport(monthlyReports);
                     break;
                 case 4:
-                    final List<YearReport> yearReports = yearService.generateAllYearReport();
-                    presentation.showYearReport(yearReports);
+                    final List<YearlyReport> yearlyReports = yearService.generateAllYearReport();
+                    presentation.showYearReport(yearlyReports);
                     break;
                 case 5:
                     final String year = presentation.userInput("Введите год: ");

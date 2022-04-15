@@ -6,7 +6,7 @@ import java.time.Year;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class YearReport implements Comparable<YearReport> {
+public class YearlyReport implements Comparable<YearlyReport> {
 
     /**
      * Год
@@ -28,7 +28,7 @@ public class YearReport implements Comparable<YearReport> {
      */
     private final BigDecimal avgConsumption;
 
-    public YearReport(Year year, Map<Month, BigDecimal> profit, BigDecimal avgIncome, BigDecimal avgConsumption) {
+    public YearlyReport(Year year, Map<Month, BigDecimal> profit, BigDecimal avgIncome, BigDecimal avgConsumption) {
         this.year = year;
         this.profit = profit;
         this.avgIncome = avgIncome;
@@ -46,7 +46,7 @@ public class YearReport implements Comparable<YearReport> {
     }
 
     @Override
-    public int compareTo(YearReport o) {
+    public int compareTo(YearlyReport o) {
         return this.year.compareTo(o.year);
     }
 
