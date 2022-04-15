@@ -49,7 +49,7 @@ public class PresentationConsole implements Presentation {
     public void showResultDataReconciliation(Set<Month> months) {
         if (months.isEmpty()) {
             System.out.println("-- -- -- -- --");
-            System.out.println("Оператция успешно завершена. Ошибок не обнаружено!");
+            System.out.println("Операция успешно завершена. Ошибок не обнаружено!");
             System.out.println("-- -- -- -- --");
         } else {
             System.out.println("-- -- -- -- --");
