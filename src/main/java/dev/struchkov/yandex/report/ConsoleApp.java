@@ -15,6 +15,9 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Класс, который принимает команды пользователя и вызывает различные сервисы бизнес логики.
+ */
 public class ConsoleApp {
 
     private final YearScheduler yearScheduler;
@@ -40,6 +43,9 @@ public class ConsoleApp {
         this.presentation = presentation;
     }
 
+    /**
+     * Метод запускающий приложение
+     */
     public void run() {
         int command;
         do {

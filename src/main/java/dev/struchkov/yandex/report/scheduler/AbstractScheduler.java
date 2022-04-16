@@ -15,6 +15,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Абстрактный класс, который реализует часть логики по автоматическому обновлению данных.
+ *
+ * @param <T>
+ */
 public abstract class AbstractScheduler<T> implements Runnable {
 
     private static final Integer WORK_FOLDER_MAX_DEPTH = 5;
@@ -73,6 +78,10 @@ public abstract class AbstractScheduler<T> implements Runnable {
         }
     }
 
+    /**
+     *
+     * @param fileName
+     */
     protected abstract void clearOld(String fileName);
 
     protected abstract void preProcessing(List<T> report, String fileName);

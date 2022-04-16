@@ -1,9 +1,12 @@
-package dev.struchkov.yandex.report.utils;
+package dev.struchkov.yandex.report.domain;
 
 import java.time.Month;
 import java.time.Year;
 import java.util.Objects;
 
+/**
+ * Используется как ключ для HashMap
+ */
 public class YearAndMonth {
 
     private final Year year;

@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.time.Month;
 import java.time.Year;
 
+/**
+ * Хранит данные месячного отчета
+ */
 public class MonthlyReport implements Comparable<MonthlyReport> {
 
     private final Year year;

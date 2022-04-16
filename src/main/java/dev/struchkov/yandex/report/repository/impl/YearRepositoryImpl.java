@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ReportYearMapRepositoryImpl implements YearRepository {
+public class YearRepositoryImpl implements YearRepository {
 
     private final Map<Year, List<YearData>> map = new HashMap<>();
 

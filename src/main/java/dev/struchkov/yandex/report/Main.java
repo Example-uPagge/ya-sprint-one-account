@@ -5,7 +5,7 @@ import dev.struchkov.yandex.report.domain.YearData;
 import dev.struchkov.yandex.report.repository.MonthRepository;
 import dev.struchkov.yandex.report.repository.YearRepository;
 import dev.struchkov.yandex.report.repository.impl.MonthRepositoryImpl;
-import dev.struchkov.yandex.report.repository.impl.ReportYearMapRepositoryImpl;
+import dev.struchkov.yandex.report.repository.impl.YearRepositoryImpl;
 import dev.struchkov.yandex.report.scheduler.MontScheduler;
 import dev.struchkov.yandex.report.scheduler.YearScheduler;
 import dev.struchkov.yandex.report.service.Accountant;
@@ -25,7 +25,7 @@ import dev.struchkov.yandex.report.service.impl.YearServiceImpl;
 public class Main {
 
     public static void main(String[] args) {
-        final YearRepository yearReportRepository = new ReportYearMapRepositoryImpl();
+        final YearRepository yearReportRepository = new YearRepositoryImpl();
         final MonthRepository monthReportRepository = new MonthRepositoryImpl();
 
         final YearService yearReportService = new YearServiceImpl(yearReportRepository);

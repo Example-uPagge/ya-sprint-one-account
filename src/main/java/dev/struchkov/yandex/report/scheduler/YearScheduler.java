@@ -7,6 +7,9 @@ import dev.struchkov.yandex.report.service.YearService;
 import java.time.Year;
 import java.util.List;
 
+/**
+ * Шедулер отвечающий за обновленние данных годового отчета.
+ */
 public class YearScheduler extends AbstractScheduler<YearData> {
 
     private final YearService yearService;

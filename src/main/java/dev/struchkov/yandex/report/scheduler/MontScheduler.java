@@ -8,6 +8,9 @@ import java.time.Month;
 import java.time.Year;
 import java.util.List;
 
+/**
+ * Шедулер для автоматического обновления данных за месяца
+ */
 public class MontScheduler extends AbstractScheduler<MonthData> {
 
     private final MonthService monthService;

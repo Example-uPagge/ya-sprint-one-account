@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.time.Month;
 import java.time.Year;
 
+/**
+ * Сущность, отвечающая за хранение данных строки года
+ */
 public class YearData {
 
     private Year year;

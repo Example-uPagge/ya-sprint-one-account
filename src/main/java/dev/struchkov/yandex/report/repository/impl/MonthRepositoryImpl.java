@@ -2,7 +2,7 @@ package dev.struchkov.yandex.report.repository.impl;
 
 import dev.struchkov.yandex.report.domain.MonthData;
 import dev.struchkov.yandex.report.repository.MonthRepository;
-import dev.struchkov.yandex.report.utils.YearAndMonth;
+import dev.struchkov.yandex.report.domain.YearAndMonth;
 
 import java.time.Month;
 import java.time.Year;

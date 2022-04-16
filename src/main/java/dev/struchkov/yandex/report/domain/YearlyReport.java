@@ -6,6 +6,9 @@ import java.time.Year;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Хранит данные годового отчета.
+ */
 public class YearlyReport implements Comparable<YearlyReport> {
 
     /**
