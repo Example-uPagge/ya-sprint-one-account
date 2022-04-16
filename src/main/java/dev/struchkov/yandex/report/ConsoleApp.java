@@ -76,7 +76,7 @@ public class ConsoleApp {
                                     montScheduler.run();
                                 }
                             },
-                            0, 60_000
+                            0, 10_000
                     );
                     break;
                 case 3:
